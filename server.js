@@ -1,6 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db'); // Import DB connection function
 const bookRoutes = require('./routes/bookRoutes'); // Import book routes
+
+
 
 const app = express();
 
