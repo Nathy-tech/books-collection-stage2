@@ -2,9 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/db'); // Import DB connection function
 const bookRoutes = require('./routes/bookRoutes'); // Import book routes
-
-
-
+const authRoutes = require('./routes/authRoutes'); // Import auth routes
 const app = express();
 
 // Middleware to parse JSON bodies
@@ -19,8 +17,9 @@ app.use((req, res, next) => {
     next();
 });
 
-// Routes - Use `/api` as the prefix for book routes
-app.use('/api/books', bookRoutes);  // Ensure routes are correctly set up
+// Routes
+app.use('/api/auth', authRoutes);  // Authentication routes (signup, login)
+app.use('/api/books', bookRoutes);  // Books routes (CRUD operations)
 
 // Root route for testing the server
 app.get('/', (req, res) => {
