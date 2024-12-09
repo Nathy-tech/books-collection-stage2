@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/User'); // Import User model
+const User = require('../models/userModel'); // Import User model
 const { validationResult } = require('express-validator');
 
 // Signup Controller
